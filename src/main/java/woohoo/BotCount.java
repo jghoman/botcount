@@ -58,7 +58,7 @@ public class BotCount  {
             // Extract out the bot field, casting it to a boolean, and build a tuple of that value and a count of 1
             // ie. <true, 1> or <false, 1>
             .map(edit -> new Tuple2<>(edit.get("bot").asBoolean(), 1))
-            // Java loses type information, so we have to tell Flink what we got otu of the map.
+            // Java loses type information, so we have to tell Flink what we got out of the map.
             // Scala doesn't have this problem... just sayin'.
             .returns(TypeInformation.of(new TypeHint<Tuple2<Boolean, Integer>>() {}))
             // Group the result stream by the boolean field (position 0)
