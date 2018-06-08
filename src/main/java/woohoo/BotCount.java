@@ -30,11 +30,9 @@ public class BotCount  {
     public static void main( String[] args ) throws Exception {
         // Parse the command line args to figure out what to output
         ParameterTool parameter = ParameterTool.fromArgs(args);
-        System.out.println("args length = " + args.length);
-        System.out.println("arg[0] = " + args[0]);
-        System.out.println("parameter = " + parameter.get("output"));
+
         String output = parameter.get("output", "terminal");
-        System.out.println("output = " + output);
+
         if(!(output.equals("terminal") || output.equals("kafka"))) {
             throw new IllegalArgumentException("Need to write output either to the terminal or to Kafka, not \" + output");
         }
