@@ -124,6 +124,7 @@ public class BotCount  {
             botCountsAsJson.addSink(botcountTopic);
         }
 
+        // Really important: Actually tell Flink to start the streaming app
         env.execute();
     }
 }
